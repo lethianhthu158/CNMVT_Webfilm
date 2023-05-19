@@ -74,7 +74,7 @@ def LogIn(request):
             request.session.set_expiry(2592000)#30 ngày
         login(request, user)
         messages.success(request,"Log in successfully")
-        return redirect('userpacket')
+        return redirect('home')
       else:
         messages.error(request,"Invalid Username or Password")
         return redirect('log_in')
@@ -127,7 +127,7 @@ def password_reset_request(request):
   password_reset_form = PasswordResetForm()
   return render(request, template_name="./Info//reset_password.html", context={"form":password_reset_form})
 
-Choices_User="CHILD"
+Choices_User="ADULT"
  
 
 @login_required(login_url='log_in')
